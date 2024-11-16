@@ -20,9 +20,22 @@ rpm-ostree override remove \
 	virtualbox-guest-additions \
 	nano nano-default-editor \
 	gnome-software plocate \
-	yelp \
+	yelp gnome-tour \
 	--install vim-default-editor
 
 # install preferred packages
-rpm-ostree install ffmpeg curl htop vim tmux keepassxc rsync seahorse \
-	gvfs-nfs NetworkManager-tui syncthing
+# one space and a backslash after every line, EXCEPT the last one
+rpm-ostree install \
+    NetworkManager-tui \
+    celluloid \
+    curl \
+    ffmpeg \
+    gvfs-nfs \
+    htop \
+    keepassxc \
+    rsync \
+    seahorse \
+    syncthing \
+    tmux \
+    vim \
+    yt-dlp
