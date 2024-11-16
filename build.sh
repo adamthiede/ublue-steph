@@ -12,12 +12,17 @@ RELEASE="$(rpm -E %fedora)"
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-rpm-ostree install screen
+#rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
-# this would install a package from rpmfusion
-# rpm-ostree install vlc
+# remove some base packages
 
-#### Example for enabling a System Unit File
+rpm-ostree override remove \
+	virtualbox-guest-additions \
+	nano nano-default-editor \
+	gnome-software plocate \
+	yelp \
+	--install vim-default-editor
 
-systemctl enable podman.socket
+# install preferred packages
+rpm-ostree install ffmpeg yt-dlp curl htop vim tmux keepassxc rsync seahorse \
+	gvfs-nfs virt-manager NetworkManager-tui syncthing tailscale
