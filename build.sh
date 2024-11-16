@@ -16,6 +16,7 @@ RELEASE="$(rpm -E %fedora)"
 
 # remove some base packages
 rpm-ostree override remove \
+	firefox firefox-langpacks \
 	virtualbox-guest-additions \
 	nano nano-default-editor \
 	plocate yelp gnome-tour \
