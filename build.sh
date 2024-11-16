@@ -24,5 +24,5 @@ rpm-ostree override remove \
 	--install vim-default-editor
 
 # install preferred packages
-rpm-ostree install ffmpeg yt-dlp curl htop vim tmux keepassxc rsync seahorse \
-	gvfs-nfs virt-manager NetworkManager-tui syncthing tailscale
+rpm-ostree install ffmpeg curl htop vim tmux keepassxc rsync seahorse \
+	gvfs-nfs NetworkManager-tui syncthing
