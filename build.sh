@@ -15,12 +15,10 @@ RELEASE="$(rpm -E %fedora)"
 #rpm-ostree install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
 # remove some base packages
-
 rpm-ostree override remove \
 	virtualbox-guest-additions \
 	nano nano-default-editor \
-	gnome-software plocate \
-	yelp gnome-tour \
+	plocate yelp gnome-tour \
 	--install vim-default-editor
 
 # install preferred packages
@@ -37,5 +35,4 @@ rpm-ostree install \
     seahorse \
     syncthing \
     tmux \
-    vim \
     yt-dlp
