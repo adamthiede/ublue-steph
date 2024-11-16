@@ -1,5 +1,18 @@
 # image-template
 
+# how-to
+
+on an existing ostree install:
+```
+sudo ostree admin pin 0
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/adamthiede/ublue-steph:latest
+```
+reboot
+```
+rpm-ostree rebase ostree-image-signed:docker://ghcr.io/adamthiede/ublue-steph:latest
+```
+
+
 # Purpose
 
 This repository is meant to be a template for building your own custom Universal Blue image. This template is the recommended way to make customizations to any image published by the Universal Blue Project:
@@ -8,7 +21,7 @@ This repository is meant to be a template for building your own custom Universal
 - [Bluefin](https://projectbluefin.io/)
 - [uCore](https://projectucore.io/)
 - [main](https://github.com/ublue-os/main/)
-- [hwe](https://github.com/ublue-os/hwe/) 
+- [hwe](https://github.com/ublue-os/hwe/)
 
 This template includes a Containerfile and a Github workflow for building the container image. As soon as the workflow is enabled in your repository, it will build the container image and push it to the Github Container Registry.
 
@@ -59,7 +72,7 @@ This provides users a method of verifying the image.
     cosign generate-key-pair
     ```
 
-    
+
     - Do NOT put in a password when it asks you to, just press enter. The signing key will be used in GitHub Actions and will not work if it is encrypted.
 
 > [!WARNING]
